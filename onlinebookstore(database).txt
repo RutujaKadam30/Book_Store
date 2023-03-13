@@ -1,0 +1,110 @@
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 98
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employeedata       |
+| information_schema |
+| jdeveloper         |
+| login              |
+| mysql              |
+| obookstore         |
+| onlinebookstore    |
+| onlinestore        |
+| performance_schema |
+| sakila             |
+| swing_demo         |
+| sys                |
+| test               |
+| world              |
++--------------------+
+14 rows in set (0.01 sec)
+
+mysql> use login;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_login |
++-----------------+
+| book            |
+| registration    |
+| selleregi       |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc book;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| sNo         | int          | YES  |     | NULL    |       |
+| bookname    | varchar(100) | YES  |     | NULL    |       |
+| authorname  | varchar(100) | YES  |     | NULL    |       |
+| bookQty     | int          | YES  |     | NULL    |       |
+| bookQtyCopy | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from book;
++------+-------------------+------------------+---------+-------------+
+| sNo  | bookname          | authorname       | bookQty | bookQtyCopy |
++------+-------------------+------------------+---------+-------------+
+|    1 | aaa               | abc              |      20 |          20 |
+|    2 | xyz               | aa               |      20 |          20 |
+|    2 | python            | Guidovan russume |      15 |          15 |
+|    3 | Daily_Inspiration | Robin Sharma     |      20 |          20 |
++------+-------------------+------------------+---------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> desc registration;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| name      | varchar(100) | YES  |     | NULL    |       |
+| password  | varchar(25)  | YES  |     | NULL    |       |
+| mobilenum | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from registration;
++--------+----------+------------+
+| name   | password | mobilenum  |
++--------+----------+------------+
+| abcd   | 1234     |  123456789 |
+| xyz    | 4567     |  987456123 |
+| Rutuja | 7896     | 1239874560 |
++--------+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> desc selleregi;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| name      | varchar(100) | YES  |     | NULL    |       |
+| password  | varchar(25)  | YES  |     | NULL    |       |
+| mobilenum | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from selleregi;
++--------+----------+-----------+
+| name   | password | mobilenum |
++--------+----------+-----------+
+| rashmi | 4567     | 999999999 |
+| rutuja | 1234     | 123456789 |
+| Rutuja | rutuja   | 963852741 |
++--------+----------+-----------+
+3 rows in set (0.00 sec)
+
+mysql>
